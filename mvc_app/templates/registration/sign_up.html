@@ -1,0 +1,29 @@
+{% extends "start.html" %}
+
+{% block content %}
+  
+  <div class="container mt-5">
+    <div class="card shadow mx-auto">
+      <form class="card-body" method="post">
+        {% csrf_token %}
+        <h5 class="card-title text-center py-3">Sign Up</h5>
+        <label class="float-start" for="id_username">Username </label>
+        <input class="form-control" type="text" name="username" maxlength="40" autocapitalize="none" autocomplete="username" required id="id_username"><br>
+        <label class="float-start" for="id_password1">Password </label>
+        <input class="form-control" type="password" name="password1" autocomplete="new-password" required id="id_password1"><br>
+        <label class="float-start" for="id_password2">Confirm Password </label>
+        <input class="form-control" type="password" name="password2" autocomplete="new-password" required id="id_password2"><br>
+        <div class="row">
+          <div class="col">
+            <p class="text-secondary">Already a member then <a class="text-secondary" href="http://127.0.0.1:8000/accounts/login/">login</a></p>
+          </div>
+          <div class="col">
+            <button class="btn btn-primary" color="primary" type="submit">Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </div><br>
+      <p class="text-center fs-5 text-danger" >{{ details }}</p>
+    </div>
+
+{% endblock content %}

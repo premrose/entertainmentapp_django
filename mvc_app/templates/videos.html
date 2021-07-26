@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<div class="container me-sm-5 mt-5">
+  <h4 class=" me-sm-5 my-3">Trending Videos</h4>
+  <div class="row">
+    {% for media in video %}
+      <div class="col">
+         <div class="card shadow" loading="lazy">
+          <p class="title" title="{{ media.Title }}"> {{ media.Title }}</p>
+          <p class="date" title="{{ media.created_on }}"> {{ media.created_on }}</p>
+            <video class="card-img" controls poster="{{ media.Thumbnail.url }}" title="{{ media.Description }}"
+               src="{{ media.Media_link.url }}" type="video/mp4" loading="lazy" autopictureinpicture="true" preload="none">
+            </video>
+            <div class="d-flex flex-row">
+              <div class="p-2" title="{{ media.popularity }}">
+                <i onclick="myFunction(this)" class="fa fa-heart-o">
+                </i>
+                <p class="mx-auto">{{ media.popularity }} likes</p>
+              </div>
+              <div class="p-2" title="Share to Facebook">
+                <a href="https://www.facebook.com/sharer/sharer.php?href='{{media.Title}},{{media.Thumbnail}}'" target="_blank">
+                  <i class="fa fa-share-alt share"></i>
+                  <p class="mx-auto">share</p>
+                </a>
+              </div>
+            </div>
+        </div>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+  <script>
+    function myFunction(x) {
+      x.classList.toggle("fa-heart");
+      x.classList.toggle("fa-heart-o");
+    }
+    $.get("{% url 'favourite_post' %}", {Media_id: Media_id}, function(){
+      location.reload();
+    });
+  </script>
+{% endblock scripts %}

@@ -1,0 +1,15 @@
+{% extends "start.html" %}
+
+{% block content %}
+  
+  <div class="container mt-5">
+    <div class="card shadow mx-auto">
+      <form class="card-body">
+        {% csrf_token %}
+        <h5 class="card-title text-center py-3">Sign Up</h5>
+        {{form}}
+      </form>
+    </div>
+  </div>
+
+{% endblock content %}

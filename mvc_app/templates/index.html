@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Entertainment App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+@media screen and (min-width:600px){
+.card{
+  transition:all 0.2s;
+}
+.card:hover{
+  margin-top: -3px;
+  transition:all 0.15s;
+}
+}
+h4{
+  text-align: center;
+}
+.nav-item a{
+  color: white;
+  transition:all 0.2s;
+}
+.nav-item a:hover{
+  color: rgb(201, 201, 201);
+  transition:all 0.2s;
+}
+.card{
+ height: 240px;
+ width: 270px;
+}
+p.title ,.date{
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+a{
+  color: black;
+  text-decoration: none;
+}
+.p-2{
+  color: black;
+  font-size: 23px;
+  margin-top: -5px;
+}
+.p-2 a:hover{
+  color: black;
+}
+.p-2 p{
+  font-size: 9px;
+  margin-top: -8px;
+}
+.card-img{
+  border-radius: 0%;
+  width: 269px;
+  height: 140px;
+  object-fit:cover;
+}
+.fa-heart, .fa-heart-o {
+  color: red;
+  cursor: pointer;
+  user-select: none;
+}
+.row{
+  margin-bottom: 10px;
+}
+.col{
+  padding: 10px;
+}
+.title{
+  font-size: 15px;
+  margin-top: 5px;
+}
+.date{font-size: 10px;}
+
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="http://127.0.0.1:8000/video/" title="Entertainment App">EV</a>
+
+        <ul class="nav">
+          <li class="nav-item" title="Videos"><a class="nav-link" href="http://127.0.0.1:8000/video/">Videos</a></li>
+          <li class="nav-item" title="Musics"><a class="nav-link" href="http://127.0.0.1:8000/audio/">Musics</a></li>
+          <li class="nav-item" title="Logout"><a class="nav-link" href="http://127.0.0.1:8000/accounts/logout/"><i class="fa fa-sign-out"></i></a></li>
+        </ul>
+    </div>
+    </nav>
+    
+    {% block content %} {% endblock content %}
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAsmvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+    
+    {% block scripts %}{% endblock scripts %}
+
+</body>
+</html>  
